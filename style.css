@@ -14,6 +14,7 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4, .h5{
     --petrolio: rgb(21, 141, 168);
     --grigio: rgb(245, 245, 247);
 }
+
 /* Navbar */
 .bg-nav{
     background-color: var(--petrolio);
@@ -30,6 +31,22 @@ li{
 .logo{
     width: 100px;
     height: 100px;
+}
+
+.nav-link:hover{
+    color: var(--grigio);
+    border-bottom: solid 2px var(--grigio);
+}
+/* header */
+
+.img-header{
+    margin-top: 80px;
+    width: 600px;
+    height: 800px;
+}
+
+.niente{
+    height: 1000px;
 }
 
 .bordo{
