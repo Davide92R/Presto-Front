@@ -1,0 +1,37 @@
+
+/* Fonts */
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3, h4, .h1, .h2, .h3, .h4, .h5{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Colori */
+
+:root{
+    --petrolio: rgb(21, 141, 168);
+    --grigio: rgb(245, 245, 247);
+}
+/* Navbar */
+.bg-nav{
+    background-color: var(--petrolio);
+}
+
+li{
+    font-weight: bold;
+    color: var(--grigio);
+}
+.lente{
+    width: 40px;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+.bordo{
+    border: solid 2px red;
+}
