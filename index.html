@@ -1,9 +1,14 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Presto.it</title>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <!-- Fontawesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,21 +19,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./style.css">
-  </head>
-  <body>
+</head>
+<body>
     <!-- Navbar -->
     <nav id="navbar" class="navbar navbar-expand-lg bg-nav pb-0 fixed-top">
         <div class="container-fluid">
-                <a class="navbar-brand pb-0" href="#">
-                    <img class="img-fluid logo" src="./media/logo-g.png" alt="">
-                </a>
+            <a class="navbar-brand pb-0" href="#">
+                <img class="img-fluid logo" src="./media/logo-g.png" alt="">
+            </a>
             <div class="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto fs-bold">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="./index.html">Home</a>
                     </li>
@@ -55,6 +60,7 @@
         </div>
     </nav>
     <!-- Navbar End -->
+    
     <!-- Header -->
     <header class="container-fluid">
         <div class="row vh-100">
@@ -65,24 +71,57 @@
         </div>
     </header>
     <!-- Header End -->
+    
     <!-- Section Number -->
     <section class="container mt-5">
-        <h2 class="display-3 d-flex justify-content-center color-p pt-5">I nostri numeri</h2>
-        <div class="row">
-            <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center bordo">
-                <div class="number" id="firstNumber">0</div>
-                <p class="lead n-text">Clienti Soddisfatti</p>
+        <h2 class="display-3 d-flex justify-content-center color-p pt-5" id="ourNumbers">I nostri numeri</h2>
+        <div class="row justify-content-between align-items-center mt-5">
+            <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+                <span class="display-3"> <strong> + </strong></span> <div class="number" id="firstNumber">0</div>
+                <p class="lead n-text"> <strong>Clienti Soddisfatti</strong> </p>
             </div>
-            <div class="col-12 col-md-4"></div>
-            <div class="col-12 col-md-4"></div>
+            <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+                <span class="display-3"> <strong> + </strong></span> <div class="number" id="secondNumber">0</div>
+                <p class="lead n-text"><strong>Annunci Caricati</strong></p>
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+                <span class="display-3"> <strong> + </strong></span> <div class="number" id="thirdNumber">0</div>
+                <p class="lead n-text"><strong>Recensioni</strong></p>
+            </div>
         </div>
     </section>
     <!-- Section Number End -->
+    
+    <!-- Section Swiper Products -->
+    <section class="container my5">
+        <div class="row justify-content-center">
+            <div class="col-12 my-5 text-center">
+                <h2 class="display-3 color-p">Alcuni prodotti che potresti trovare</h2>
+            </div>
+            <div class="col-12 col-md-9">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper"></div>
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="niente">
+
+    </section>
+
+    <!-- Section Swiper Products End-->
+
     <!-- <div class="niente bordo">
     </div> -->
-
-
-
+    
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Bootstrap JS -->
@@ -92,6 +131,6 @@
     <!-- Inizzializzazione AOS -->
     <script>
         AOS.init();
-      </script>
-  </body>
+    </script>
+</body>
 </html>

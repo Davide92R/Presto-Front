@@ -66,6 +66,19 @@ li{
     font-size: 50px;
 }
 
+/* Custom card swiper */
+
+.custom-card-products{
+    width:80%;
+    height: 80%;
+    border: solid 2px var(--petrolio);
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding:20px;
+}
 
 
 .niente{
