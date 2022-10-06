@@ -1,13 +1,17 @@
 // Navbar
 let navbar = document.querySelector(`#navbar`);
+let scrollUpBtn = document.querySelector(`.scrollUpBtn`);
+
 console.dir(navbar);
 
 window.addEventListener(`scroll`, ()=>{
     let scrolled = window.scrollY;
     if(scrolled > 0){
         navbar.style.backgroundColor = `rgba(21, 141, 168, 0.8)`;
+        scrollUpBtn.classList.remove(`d-none`);
     }else{
         navbar.style.backgroundColor = `rgb(21, 141, 168)`;
+        scrollUpBtn.classList.add(`d-none`);
     }
 })
 
@@ -39,8 +43,8 @@ let observer= new IntersectionObserver((entries)=>{
         if(entry.isIntersecting && confirm==false){
             confirm=true;
             createInterval (1000, 1, firstNumber);
-            createInterval (500, 10, secondNumber);
-            createInterval (350, 1, thirdNumber);
+            createInterval (500, 8, secondNumber);
+            createInterval (350, 10, thirdNumber);
             
         }
     })
