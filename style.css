@@ -28,6 +28,10 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4, .h5{
     background-color: var(--petrolio);
 }
 
+/* .wordSpace{
+    word-spacing: px;
+} */
+
 li{
     font-weight: bold;
     color: var(--grigio);
@@ -92,9 +96,39 @@ li{
     color: var(--petrolio);
 }
 
+/* Prodotti */
+.margine{
+    margin-top: 150px;
+}
+
+.accordion-button:not(.collapsed){
+    background-color: var(--grigio);
+}
+
+.products-card{
+    width: 30%;
+    min-height: 300px;
+    border: 2px solid var(--petrolio);
+    border-radius: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#priceInput{
+    width: 100%;
+}
+
+.number2{
+    font-size: 80px;
+    font-weight: 900;
+}
+
 
 .niente{
-    height: 1000px;
+    height: 3000px;
 }
 
 .bordo{
