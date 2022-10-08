@@ -1,3 +1,5 @@
+
+
 fetch(`./presto.json`).then( (response)=> response.json()).then((data)=>{
 
     let categoryWrapper = document.querySelector(`#categoryWrapper`);
@@ -7,6 +9,7 @@ fetch(`./presto.json`).then( (response)=> response.json()).then((data)=>{
         let categories = data.map((annuncio)=> annuncio.category);
     
         let uniqueCategories = [];
+
         categories.forEach((category)=>{
             if(!uniqueCategories.includes(category)){
                 uniqueCategories.push(category);
@@ -47,36 +50,32 @@ fetch(`./presto.json`).then( (response)=> response.json()).then((data)=>{
                 <p class="lead fw-bold"> ${element.price} € </p>
             
             `
-
             cardWrapper.appendChild(div);
         })
 
     }
     showCards(data);
 
-    function filterByCategory(categoria){
-
-        if(categoria != `All`){
-            let filtered = data.filter((prodotto)=> prodotto.category == categoria);
-            showCards(filtered);
-        } else {
-            showCards(data);
-        }
-
-
-
-    }
-
     let checkInputs = document.querySelectorAll(`.form-check-input`);
 
-    checkInputs.forEach((categoryInput)=>{
+    function filterByCategory(array){
 
-        categoryInput.addEventListener(`click`, ()=>{
+    // let arrayFromNodeList = Array.from(checkInputs);
+    // let button = array.find((bottone)=> bottone.checked);
+    // let categoria = button.id;
 
+    // Quello precedente è un altro modo per indicare il let categoria sotto tutto concatenato, ma rappresentai singoli passaggi che stanno avvenendo su quell'unica riga di codice concatenata.
 
-            filterByCategory(categoryInput.id);
-        })
-    })
+    let categoria = Array.from(checkInputs).find((bottone)=> bottone.checked).id;
+
+        if(categoria != `All`){
+            let filtered = array.filter((prodotto)=> prodotto.category == categoria);
+            return filtered;
+        } else {
+            return data;
+        }
+    }
+
 
     let priceInput = document.querySelector (`#priceInput`);
     let incrementNumber = document.querySelector (`#incrementNumber`);
@@ -87,36 +86,58 @@ fetch(`./presto.json`).then( (response)=> response.json()).then((data)=>{
         let maxPrice = Math.max(...prices);
         priceInput.max = Math.ceil(maxPrice);
         priceInput.value = Math.ceil(maxPrice);
-
         incrementNumber.innerHTML = Math.ceil(maxPrice);
     }
 
     setPriceInput();
 
-    function filterByPrice(prezzo){
-        let filtered = data.filter((annuncio)=> +annuncio.price <= +prezzo);
-        showCards(filtered)
+    function filterByPrice(array){
+        let filtered = array.filter((annuncio)=> +annuncio.price <= +priceInput.value);
+        return filtered;
     }
-    priceInput.addEventListener(`input`, ()=>{
-        filterByPrice(priceInput.value);
-        incrementNumber.innerHTML = `${priceInput.value}`;
-    })
+
 
     let wordInput = document.querySelector(`#wordInput`);
 
-    function filterByWord(nome){
+    function filterByWord(array){
+
+        let nome = wordInput.value
 
         if(nome.length > 1){
-            let filtered = data.filter((annuncio)=> annuncio.name.toLowerCase().includes(nome.toLowerCase()));
-            showCards(filtered);
+            let filtered = array.filter((annuncio)=> annuncio.name.toLowerCase().includes(nome.toLowerCase()));
+            return filtered;
         } else{
-            let filtered = data.filter((annuncio)=> annuncio.name[0].toLowerCase().includes(nome.toLowerCase()));
-            showCards(filtered);
+            let filtered = array.filter((annuncio)=> annuncio.name[0].toLowerCase().includes(nome.toLowerCase()));
+            return filtered;
+
         }
 
     }
     
-    wordInput.addEventListener(`input`, ()=>{
-        filterByWord(wordInput.value);
+
+    function globalFilter(){
+        let filteredByCategory = filterByCategory(data);
+        let filteredByPrice = filterByPrice(filteredByCategory);
+        let filteredByWord = filterByWord(filteredByPrice);
+
+        showCards(filteredByWord);
+    }
+
+    checkInputs.forEach((categoryInput)=>{
+        categoryInput.addEventListener(`click`, ()=>{
+            globalFilter();
+            console.log();
+        })
     })
+
+    priceInput.addEventListener(`input`, ()=>{
+        incrementNumber.innerHTML = priceInput.value;
+            globalFilter();
+
+    })
+
+    wordInput.addEventListener(`input`, ()=>{
+        globalFilter();
+    })
+
 })
