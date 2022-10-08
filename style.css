@@ -4,7 +4,7 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-h1, h2, h3, h4, .h1, .h2, .h3, .h4, .h5{
+h1, h2, h3, h4, p, .h1, .h2, .h3, .h4, .h5{
     font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -73,8 +73,8 @@ li{
 /* Custom card swiper */
 
 .custom-card-products{
-    width:80%;
-    height: 80%;
+    width:250px;
+    min-height: 400px;
     border: solid 2px var(--petrolio);
     border-radius: 5%;
     display: flex;
@@ -97,6 +97,13 @@ li{
 }
 
 /* Prodotti */
+
+.titlePage{
+    background: -webkit-linear-gradient(45deg, rgb(21, 141, 168), rgb(245, 245, 247));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .margine{
     margin-top: 150px;
 }
@@ -126,6 +133,96 @@ li{
     font-weight: 900;
 }
 
+/* Chi siamo */
+
+.circle{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    border: 2px dashed var(--petrolio);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.opener{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--petrolio);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 999;
+    background-color: var(--grigio);
+    cursor: pointer;
+    transition: 1s;
+}
+
+.moved{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    border: 2px solid var(--petrolio);
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+    transition: 1s;
+    background-color: var(--grigio);
+    cursor: pointer;
+}
+
+/* Card */
+
+.peopleCard{
+    height: 350px;
+    width: 250px;
+    border-radius: 20px;
+    border: 2px solid var(--petrolio);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inner{
+    height: 100%;
+    width: 100%;
+    border: 2px solid var(--petrolio);
+    border-radius: 20px;
+    transition: 0.4s;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.inner-face{
+    height: 350px;
+    width: 250px;
+    position: absolute;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+}
+
+.inne-back{
+    height: 350px;
+    width: 250px;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.flip-card:hover > .inner{
+    transform: rotateY(180deg);
+}
 
 .niente{
     height: 3000px;

@@ -1,60 +1,121 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Presto.it</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
-    <!-- Bottstrap CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./style.css">
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-nav">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Presto.it</title>
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <!-- Fontawesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Bottstrap CSS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg bg-nav pb-0 fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand pb-0" href="#">
+        <img class="img-fluid logo" src="./media/logo-g.png" alt="">
+      </a>
+      <div class="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto h3 wordSpace">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="./prodotti.html">Prodotti</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="./la_cura_del_bonsai.html">La cura del bonsai</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="./chi_siamo.html">Chi Siamo</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="./contatti.html">Contatti</a>
+          </li>
+        </ul>
+        <form class="d-flex ms-auto" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="bg-transparent border-0">
+            <img class="img-fluid lente" src="./media/lente.png" alt="">
           </button>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="bg-transparent border-0">
-                <img class="img-fluid lente" src="./media/1976105-f5f5f7.png" alt="">
-            </button>
-          </form>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./prodotti.html">Prodotti</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./news.html">News</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./chi_siamo.html">Chi Siamo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./contatti.html">Contatti</a>
-              </li>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Scroll up Btn -->
+  <a class="scrollUpBtn" href="#">
+    <i class="fa-solid fa-circle-chevron-up fa-4x"></i>
+  </a>
+  <!-- Scroll up Btn End-->
+
+  <!-- Header -->
+  <div class=" margine d-flex justify-content-center">
+    <h1><span class="text-center display-1 titlePage h1">Chi siamo</span></h1>
+  </div>
+
+  <!-- Effetto Circle -->
+
+  <section class="container">
+    <div class="row 100-vh">
+      <div class="col-12 col-md-6 d-flex justify-content-center align-items-center margine"  data-aos="zoom-in" data-aos-duration="2000">
+        <div class="circle">
+          <div class="opener">
+            <i class="fa-brands fa-pagelines fa-3x color-p"></i>
           </div>
+          <div class="moved"></div>
+          <div class="moved"></div>
+          <div class="moved"></div>
+          <div class="moved"></div>
         </div>
-      </nav>
-    <!-- Navbar End -->
+      </div>
+      <div id="cardWrapper" class="col-12 col-md-6 d-flex align-items-center margine justify-content-center">
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Effetto Circle End-->
 
 
 
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <!-- Custom JS -->
-    <script src="./main.js"></script>
-  </body>
+
+
+  <!-- Header End -->
+  
+  
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <!-- Custom JS -->
+  <script src="./chi_siamo.js"></script>
+  <script src="./main.js"></script>
+  <!-- Inizzializzazione AOS -->
+  <script>
+    AOS.init();
+  </script>
+</body>
 </html>
