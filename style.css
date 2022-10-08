@@ -15,12 +15,20 @@ h1, h2, h3, h4, p, .h1, .h2, .h3, .h4, .h5{
     --grigio: rgb(245, 245, 247);
 }
 
+.color-g{
+    color:  rgb(245, 245, 247);
+}
+
 .color-p{
     color: rgb(21, 141, 168);
 }
 
 .bg-grigio{
     background-color: var(--grigio);
+}
+
+.bg-p{
+    background-color: var(--petrolio);
 }
 
 /* Navbar */
@@ -190,38 +198,6 @@ li{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-}
-
-.inner{
-    height: 100%;
-    width: 100%;
-    border: 2px solid var(--petrolio);
-    border-radius: 20px;
-    transition: 0.4s;
-    position: relative;
-    transform-style: preserve-3d;
-}
-
-.inner-face{
-    height: 350px;
-    width: 250px;
-    position: absolute;
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    backface-visibility: hidden;
-}
-
-.inne-back{
-    height: 350px;
-    width: 250px;
-    position: absolute;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
-}
-
-.flip-card:hover > .inner{
-    transform: rotateY(180deg);
 }
 
 .niente{
