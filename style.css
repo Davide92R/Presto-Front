@@ -200,6 +200,15 @@ li{
     justify-content: space-between;
 }
 
+/* Cura dei Bonsai */
+
+.timeLine{
+    border-right: 2px solid var(--petrolio)
+}
+.timeLine2{
+    border-left: 2px solid var(--petrolio)
+}
+
 .niente{
     height: 3000px;
 }
